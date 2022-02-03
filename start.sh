@@ -11,4 +11,4 @@ feh --no-fehbg --bg-fill $BGTEMP
 rm $BGTEMP
 
 # Start conky
-conky -c $HOME/.config/conky/Regulus/Regulus.conf &> /dev/null &
+conky -c $HOME/.config/conky/NeoRegulus/NeoRegulus.conf &> /dev/null &
