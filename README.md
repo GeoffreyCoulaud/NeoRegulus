@@ -10,7 +10,7 @@ A Conky theme based on Leonis/Regulus by [closebox73](https://github.com/closebo
 * Support for UTF-8 music metadata
 * Music status from Rhythmbox by default, but any `mpris` compliant player can work
 * Bigger network graph
-* French language by default
+* Support for multiple languages
 
 ## Dependencies
 * `feh`

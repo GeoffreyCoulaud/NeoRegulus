@@ -14,40 +14,25 @@ function player_get {
 		string:"$MPRIS_INT.Player" \
 		string:"$1"
 }
-function value {
-	echo $1 | sed -E "s/(.+\|){2}//"
-}
 
 if [[ $1 = "status" ]]; then
 
 	out=$(player_get "PlaybackStatus" | sed -r -n '/variant/{s@.*string[[:space:]]+"([^"]+).*@\1@g;p}')
 
 	case $out in
-		"Playing")
-			echo "Lecture";;
-		"Paused")
-			echo "En pause";;
-		"Stopped")
-			echo "Stoppé";;
+		"Playing") i18n.sh "playing";;
+		"Paused") i18n.sh "paused";;
+		"Stopped") i18n.sh "stopped";;
 	esac
 
 else
 
 	out=$(player_get "Metadata" | sed -r -n '/variant.*array/d; /(string[[:space:]]+|variant[[:space:]]+)/!d; /".*"$/{s@[^"]+"(.*?)"[^"]*$@\1@g}; /variant/{s@.*[[:space:]]+@@g}; p' | sed 's@:@|@g;N;s@\n@|@g')
-	title=$(echo "$out" | grep -E "\|title\|")
-	artist=$(echo "$out" | grep -E "\|artist\|")
-	album=$(echo "$out" | grep -E "\|album\|")
 
 	case $1 in
-		"title")
-			value "$title";;
-		"artist")
-			value "$artist";;
-		"album")
-			value "$album";;
-		*)
-			echo "Not found"
-			exit 1;;
+		"artist") ;&
+		"title") ;&
+		"album") echo "$out" | grep -E "\|$1\|" | sed -E "s/(.+\|){2}//";;
 	esac
 
 fi
