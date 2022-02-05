@@ -27,7 +27,7 @@ settings_table = {
         fg_colour=0x1EF75E
 ,
         fg_alpha=0.8,
-        x=1815, y=69,
+        x=1795, y=124,
         radius=24,
         thickness=6,
         start_angle=0,
@@ -42,7 +42,7 @@ settings_table = {
         fg_colour=0x1EF75E
 ,
         fg_alpha=0.8,
-        x=1875, y=69,
+        x=1855, y=124,
         radius=24,
         thickness=6,
         start_angle=0,
@@ -57,7 +57,7 @@ settings_table = {
         fg_colour=0x1EF75E
 ,
         fg_alpha=0.8,
-        x=1815, y=130,
+        x=1795, y=185,
         radius=24,
         thickness=6,
         start_angle=0,
@@ -71,7 +71,7 @@ settings_table = {
         bg_alpha=0.2,
         fg_colour=0x1EF75E,
         fg_alpha=0.8,
-        x=1815, y=130,
+        x=1795, y=185,
         radius=15,
         thickness=6,
         start_angle=0,
